@@ -8,14 +8,6 @@
     "priority": "HIGH"
   },
   {
-    "id": "2",
-    "title": "Learning React.js",
-    "description": "Read documentation about React js middlewares and usage",
-    "status": "OPEN",
-    "createdAt": "2011-10-05T14:48:00.000Z",
-    "priority": "HIGH"
-  },
-  {
     "id": "4",
     "title": "Learning Css3",
     "description": "Read documentation about Css3 and usage",
@@ -26,6 +18,14 @@
   {
     "id": "2eb1adbf-3ba0-4eb0-a558-bea1e920292b",
     "title": "playing",
+    "description": "samaradorlini 21 yo'li",
+    "status": "OPEN",
+    "createdAt": "2011-10-05T14:48:00.000Z",
+    "priority": "HIGH"
+  },
+  {
+    "id": "3f87750a-d985-42db-bf21-e5b09288bcd6",
+    "title": "reading",
     "description": "samaradorlini 21 yo'li",
     "status": "OPEN",
     "createdAt": "2011-10-05T14:48:00.000Z",
