@@ -1,8 +1,8 @@
-const Tasks = require("../models/model");
+const Tasks = require("../models/todoModel.js");
 
 async function getTaskList(req,res){
     try {
-        const result = await Tasks.getTaskAll() ;
+        const result = await Tasks.getTaskAll();
         res.send(result);
     }catch (e) {
         res.status(404).send(e);
@@ -14,7 +14,7 @@ async function getTaskListById(req,res){
   try{
       let result = await Tasks.getTaskById(id);
       if(!result){
-          res.status(404).send("Product isnot exist")
+          res.status(404).send("Product not exist")
       }else {
           res.send(result);
       }
@@ -86,6 +86,7 @@ async function deleteTaskElement(req,res){
     }
 
 }
+//
 
 module.exports = {
     getTaskList,

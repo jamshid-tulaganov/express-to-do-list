@@ -1,7 +1,7 @@
-const data = require("../data.json");
+const data = require("../data/dataToDoList.json");
 const uuid = require("uuid");
 const utils = require("../utils/utils");
-const {writeFile} = require("../utils/utils");
+
 function getTaskAll(){
     return new Promise((resolve,reject) =>{
        resolve(data);
@@ -10,10 +10,10 @@ function getTaskAll(){
 
 function getTaskById(id){
     return new Promise((resolve,reject) =>{
-        let newTask = data.find((el) =>{
-            return  el.id == id
+        const taskById = data.find((el) =>{
+           return  el.id === id
         })
-        resolve(newTask);
+        resolve(taskById);
     })
 }
 
@@ -24,7 +24,7 @@ function createTask(obj){
           ...obj
       }
       data.push(newObj2);
-      utils.writeFile("data.json",data);
+      utils.writeFile("./data/dataToDoList.json",data);
       resolve(newObj2)
   })
 
@@ -36,7 +36,7 @@ function updateTask(id,newObj){
            return  el.id === id
         })
         data[index] = {id,...newObj};
-        writeFile("data.json",data);
+        utils.writeFile("./data/dataToDoList.json",data);
         resolve(newObj);
     })
 }
@@ -46,15 +46,16 @@ function deleteTask(id){
        const deletedTasks = data.filter((el) =>{
            return  el.id !== id
         })
-      utils.writeFile("data.json",deletedTasks);
+        utils.writeFile("./data/dataToDoList.json",deletedTasks);
        resolve(true);
     })
 }
+
 
 module.exports ={
     getTaskAll,
     getTaskById,
     createTask,
     updateTask,
-    deleteTask
+    deleteTask,
 }
