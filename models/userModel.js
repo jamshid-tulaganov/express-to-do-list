@@ -1,6 +1,7 @@
 const users = require("../data/dataUser.json");
 const {v4:uuid} = require("uuid");
-const util = require("../utils/utils")
+const util = require("../utils/utils");
+
 // get all model users
 function getAllUser(){
     return new Promise((resolve,reject) =>{
@@ -17,21 +18,18 @@ function getUserId(id){
     })
 }
 //create user
-function createUser(req){
+function createUser(obj){
     return new Promise((resolve,reject) =>{
-        const {fullName,age,username,password} = req.body;
-        const newUser = {
+        const newObj2 = {
             id:uuid(),
-            fullName,
-            age,
-            username,
-            password
+            ...obj
         }
-        users.push(newUser);
-        util.writeFile("./data/dataUser.json",users);
-        resolve(newUser);
+        users.push(newObj2);
+        util.writeFile("./data/dataUser.json",users)
+        resolve(newObj2);
     })
 }
+
 //update user
 function updateUser(id,newObj){
     return new Promise((resolve,reject) =>{

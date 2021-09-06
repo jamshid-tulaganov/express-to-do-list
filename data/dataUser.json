@@ -12,5 +12,19 @@
     "age": 21,
     "username": "harry",
     "password": "password123"
+  },
+  {
+    "id": "81faaab0-8b9d-4891-84b9-08a4a657b3ad",
+    "fullName": "Jamshid",
+    "age": 19,
+    "username": "johnww",
+    "password": "$2b$12$tM8wCtpgi0Vb1u251fBpb.hSZu4sIcFRUq9slFjejIeVR2Ck9lQ36"
+  },
+  {
+    "id": "0159c936-e2c2-47d1-a111-91e4973195d5",
+    "fullName": "Jamshid",
+    "age": 19,
+    "username": "joh11",
+    "password": "$2b$12$07cV2u3mBWiiMznHGgAo1.kebBmbfv9M69apMRFU27mzUADTaE93."
   }
 ]

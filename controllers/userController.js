@@ -1,5 +1,6 @@
 const user = require("../models/userModel");
-const {use} = require("express/lib/router");
+const bcrypt = require("bcrypt");
+const authModel = require("../models/authModel")
 //get all users
 async function getAllUserController(req,res){
     try {
@@ -27,13 +28,24 @@ async function getUserById(req,res){
 }
 //
 async function createUserByController(req,res){
+    const {fullName,age,username,password} = req.body;
     try {
-       const result = await user.createUser(req);
-       if(result){
-           res.send("created user")
-       }else{
-           res.send("oooo no")
-       }
+        const  result = await authModel.findUser(username);
+        if(result){
+            res.send({
+                message:"username bunaqasi bor"
+            })
+        }else{
+            const hashPassword = await bcrypt.hash(password,12)
+            const newUser = {
+                fullName,
+                age,
+                username,
+                password: hashPassword
+            }
+          const addedUser =  await user.createUser(newUser);
+          res.send(addedUser);
+        }
     }catch (e) {
         res.send(e);
     }
