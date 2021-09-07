@@ -1,11 +1,13 @@
 const {Router} = require("express");
 const router = Router();
-const {getTaskList,getTaskListById,createTaskElement,updateTaskElement,deleteTaskElement,changeStatusElement} = require("../controllers/todoController.js");
-router.get("/",getTaskList);
-router.get("/:id",getTaskListById);
-router.post("/",createTaskElement)
-router.put("/:Id",updateTaskElement);
-router.delete("/:Id",deleteTaskElement);
+const {checkUser} = require("../middleware/authmiddleware");
+const {checkAdmin} = require("../middleware/permission")
+const {getTaskList,getTaskListById,createTaskElement,updateTaskElement,deleteTaskElement} = require("../controllers/todoController.js");
+router.get("/",checkUser,getTaskList);
+router.get("/:id",checkUser,getTaskListById);
+router.post("/",checkUser,checkAdmin,createTaskElement)
+router.put("/:Id",checkUser,checkAdmin,updateTaskElement);
+router.delete("/:Id",checkUser,checkAdmin,deleteTaskElement);
 
 module.exports = {
     toDoRouter:router

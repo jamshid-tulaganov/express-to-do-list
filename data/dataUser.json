@@ -4,21 +4,36 @@
     "fullName": "John Doe",
     "age": 25,
     "username": "john",
-    "password": "password"
+    "password": "password",
+    "permissions": [
+      "status",
+      "user:read",
+      "user:write"
+    ]
   },
   {
     "id": "2",
     "fullName": "Harry Potter",
     "age": 21,
     "username": "harry",
-    "password": "password123"
+    "password": "password123",
+    "permissions": [
+      "status",
+      "user:read",
+      "user:write"
+    ]
   },
   {
     "id": "81faaab0-8b9d-4891-84b9-08a4a657b3ad",
     "fullName": "Jamshid",
     "age": 19,
     "username": "johnww",
-    "password": "$2b$12$tM8wCtpgi0Vb1u251fBpb.hSZu4sIcFRUq9slFjejIeVR2Ck9lQ36"
+    "password": "$2b$12$tM8wCtpgi0Vb1u251fBpb.hSZu4sIcFRUq9slFjejIeVR2Ck9lQ36",
+    "permissions": [
+      "status",
+      "user:read",
+      "user:write"
+    ]
   },
   {
     "id": "0159c936-e2c2-47d1-a111-91e4973195d5",
@@ -26,5 +41,29 @@
     "age": 19,
     "username": "joh11",
     "password": "$2b$12$07cV2u3mBWiiMznHGgAo1.kebBmbfv9M69apMRFU27mzUADTaE93."
+  },
+  {
+    "id": "81b24361-7a08-405b-a53f-5d84dd11fedd",
+    "fullName": "Afzal",
+    "age": 22,
+    "username": "programmer",
+    "password": "$2b$12$.j2fafsA6Z1twLSurt/km.8wfwN6wczP97qQVJXVLOK1rpDeVpI0S",
+    "permission": "admin"
+  },
+  {
+    "id": "02d39eb8-2ac9-45da-b252-d0a403a04320",
+    "fullName": "Iroda",
+    "age": 26,
+    "username": "nurser",
+    "password": "$2b$12$vSKU96tdH.okx6JDxwiHQ.4.wzV73/XsaHe4sLTJ.uD2JdwlEGxSS",
+    "permission": "user"
+  },
+  {
+    "id": "e25dd46e-c74d-443f-99ea-adc32e75da5d",
+    "fullName": "Iroda",
+    "age": 26,
+    "username": "job",
+    "password": "$2b$12$0LiDDGNELjeL1gUZt2QEau8.AGILVDOhdOfz9Y2j.b8//uqs7vy36",
+    "permission": "admin"
   }
 ]

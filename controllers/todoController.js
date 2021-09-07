@@ -2,6 +2,7 @@ const Tasks = require("../models/todoModel.js");
 
 async function getTaskList(req,res){
     try {
+        console.log(req.users);
         const result = await Tasks.getTaskAll();
         res.send(result);
     }catch (e) {

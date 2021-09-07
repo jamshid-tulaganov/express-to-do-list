@@ -28,7 +28,8 @@ async function getUserById(req,res){
 }
 //
 async function createUserByController(req,res){
-    const {fullName,age,username,password} = req.body;
+    const {fullName,age,username,password,permission} = req.body;
+    console.log(req.user)
     try {
         const  result = await authModel.findUser(username);
         if(result){
@@ -41,7 +42,8 @@ async function createUserByController(req,res){
                 fullName,
                 age,
                 username,
-                password: hashPassword
+                password: hashPassword,
+                permission
             }
           const addedUser =  await user.createUser(newUser);
           res.send(addedUser);
